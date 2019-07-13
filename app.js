@@ -32,7 +32,7 @@ var parser = csvparser({delimiter: ','}, function (err, data) {
        node[nodeData.nodeId] = nodeData;
     }
 //IF IT'S THERE AND THE STATUS OF THE NEXT ROW IS CONNECTED & THE SEQUENCE ID IS MORE THAN THE STORE SEQUENCE I.E THE NEXT RECORD
-    else if ((nodeData.nodeId in node) && nodeData.status === "Connected" && nodeData.sequenceId > node[nodeData.nodeId].sequenceId) {
+    else if ((nodeData.nodeId in node) && nodeData.status === "Connected") {
         var start_date = moment(node[nodeData.nodeId].date, 'DD-MM-YYYY');
         var end_date = moment(nodeData.date, 'DD-MM-YYYY');
 
