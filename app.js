@@ -45,7 +45,6 @@ var parser = csvparser({delimiter: ','}, function (err, data) {
                 result[nodeData.nodeId].add(days.format())
             }
         }
-        result[nodeData.nodeId].add(moment(node[nodeData.nodeId].date, 'DD-MM-YYYY').format());
 //TO MOVE AHEAD SINCE THERE ARE MULTIPLE ROWS FOR EACH NODEID REMOVING THAT KEY
         delete node[nodeData.nodeId];
     }
